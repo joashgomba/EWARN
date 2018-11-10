@@ -1,0 +1,29 @@
+ALTER TABLE `forms` ADD `timely` INT(11) NOT NULL AFTER `country_id`;
+
+
+
+
+
+SELECT forms.week_no,forms.reporting_year,sum(case when formsdata.disease_name = 'OAD' then formsdata.total_disease end) OAD,
+zones.zone,regions.region,districts.district,healthfacilities.health_facility,formsdata.form_id
+FROM forms,zones,regions,districts,healthfacilities,formsdata
+WHERE forms.zone_id = zones.id
+AND forms.region_id = regions.id
+AND forms.district_id = districts.id
+AND forms.healthfacility_id = healthfacilities.id
+AND formsdata.form_id = forms.id
+AND forms.epicalendar_id = 184
+GROUP BY forms.epicalendar_id
+
+
+SELECT diseases.disease_code,zones.zone,regions.region,districts.district,healthfacilities.health_facility,formsdata.form_id,
+SUM(formsdata.total_disease) AS disease_sum
+FROM forms,zones,regions,districts,healthfacilities,formsdata
+WHERE forms.zone_id = zones.id
+AND forms.region_id = regions.id
+AND forms.district_id = districts.id
+AND forms.healthfacility_id = healthfacilities.id
+AND formsdata.form_id = forms.id
+AND diseases.id = formsdata.disease_id
+AND forms.epicalendar_id = 184
+GROUP BY diseases.id

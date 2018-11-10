@@ -1,0 +1,25 @@
+Name of disease
+code
+alert threshhold
+case_definition
+
+Type A - Immediate reporting
+Type B - weekly reporting
+
+
+CREATE TABLE testjson (`jsonfield` varchar(2000)) ;
+
+INSERT INTO testjson (`jsonfield`) VALUES ('{"kofaxDocId":"8ae16f46-c68f-11e5-8105-0e15fb39b661","systemDocType":"Loan Application","requestId":"c770a940-b9f3-4c41-aee6-3e08c1470ec6","docType":"Loan Application","confidence":0.6499999761581421,"engineType":"kofax","completionStatus":"Suggested"}')  ;
+
+
+SELECT substring(jsonfield, locate('"confidence":',jsonfield)+13, locate(',"', jsonfield, locate('"confidence":',jsonfield))-locate('"confidence":',jsonfield)-13) as confidence_value
+  FROM testjson;
+  
+  
+  SELECT id FROM events WHERE event_data REGEXP '"age":"([^"])Over 30([^"])"';
+
+SELECT * FROM events WHERE event_data RLIKE '"age":"[[:<:]]Over 30[[:>:]]"';
+
+SELECT * 
+FROM  `events` 
+WHERE  `event_data` REGEXP  '"id":"2","value":\\[("[[:digit:]]*",)?"5"'

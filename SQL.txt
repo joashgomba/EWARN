@@ -1,0 +1,1 @@
+ALTER TABLE `epibulletins` CHANGE `epi_curve` `epi_curve` VARCHAR(255) NOT NULL;

@@ -1,0 +1,769 @@
+<html>
+
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Respiratory Diseases | WHO</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+
+    
+
+        // This function handles style and display changes for each next button click
+
+        function handleWizardNext()
+
+        {
+
+            if (document.getElementById('ButtonNext').name == 'Step2')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step3';
+
+                document.getElementById('ButtonPrevious').name = 'Step1';
+
+                // Disable/enable buttons when reach reach start and review steps
+
+                document.getElementById('ButtonPrevious').disabled = '';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step1').style.display = 'none';
+
+                document.getElementById('Step2').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep2').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep1').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonNext').name == 'Step3')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step4';
+
+                document.getElementById('ButtonPrevious').name = 'Step2';
+
+                document.getElementById('Step2').style.display = 'none';
+
+                document.getElementById('Step3').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep3').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep2').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonNext').name == 'Step4')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step5';
+
+                document.getElementById('ButtonPrevious').name = 'Step3';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step3').style.display = 'none';
+
+                document.getElementById('Step4').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep4').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep3').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonNext').name == 'Step5')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = '';
+
+                document.getElementById('ButtonPrevious').name = 'Step4';
+
+                // Disable/enable buttons when reach reach start and review steps
+
+                document.getElementById('ButtonNext').disabled = 'disabled';
+
+                document.getElementById('SubmitFinal').disabled = '';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step4').style.display = 'none';
+
+                document.getElementById('Step5').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep5').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep4').style.backgroundColor = 'Silver';
+
+                // Load table elements for final review step
+
+                loadStep5Review();
+
+            }
+
+        }
+
+        
+
+        // This function handles style and display changes for each previous button click
+
+        function handleWizardPrevious()
+
+        {
+
+            if (document.getElementById('ButtonPrevious').name == 'Step1')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step2';
+
+                document.getElementById('ButtonPrevious').name = '';
+
+                // Disable/enable buttons when reach reach start and review steps
+
+                document.getElementById('ButtonPrevious').disabled = 'disabled';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step2').style.display = 'none';
+
+                document.getElementById('Step1').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep1').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep2').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonPrevious').name == 'Step2')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step3';
+
+                document.getElementById('ButtonPrevious').name = 'Step1';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step3').style.display = 'none';
+
+                document.getElementById('Step2').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep2').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep3').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonPrevious').name == 'Step3')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step4';
+
+                document.getElementById('ButtonPrevious').name = 'Step2';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step4').style.display = 'none';
+
+                document.getElementById('Step3').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep3').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep4').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonPrevious').name == 'Step4')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step5';
+
+                document.getElementById('ButtonPrevious').name = 'Step3';
+
+                // Disable/enable buttons when reach reach start and review steps
+
+                document.getElementById('ButtonNext').disabled = '';
+
+                document.getElementById('SubmitFinal').disabled = 'disabled';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step5').style.display = 'none';
+
+                document.getElementById('Step4').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep4').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep5').style.backgroundColor = 'Silver';
+
+            }
+
+        }
+
+        
+
+        // This function handles loading the review table innerHTML for the user to review before final submission
+
+        function loadStep5Review()
+
+        {
+
+            // Assign values to appropriate cells in review table
+
+            document.getElementById('ReviewFirstName').innerHTML = document.getElementById('SARI_u_f_male').value;
+
+            document.getElementById('ReviewMiddleName').innerHTML = document.getElementById('SARI_u_f_female').value;
+
+            document.getElementById('ReviewLastName').innerHTML = document.getElementById('TextLastName').value;
+
+            document.getElementById('ReviewEmail').innerHTML = document.getElementById('TextEmail').value;
+
+            // Indicate Yes or No based on subscription checkbox checked
+
+            if (document.getElementById('CheckboxHtmlGoodies').checked == 1)
+
+            {
+
+                document.getElementById('ReviewHtmlGoodies').innerHTML = 'Yes';
+
+            }
+
+            else
+
+            {
+
+                document.getElementById('ReviewHtmlGoodies').innerHTML = 'No';
+
+            }
+
+            if (document.getElementById('CheckboxJavaScript').checked == 1)
+
+            {
+
+                document.getElementById('ReviewJavaScript').innerHTML = 'Yes';
+
+            }
+
+            else
+
+            {
+
+                document.getElementById('ReviewJavaScript').innerHTML = 'No';
+
+            }
+
+            if (document.getElementById('CheckboxWdvl').checked == 1)
+
+            {
+
+                document.getElementById('ReviewWdvl').innerHTML = 'Yes';
+
+            }
+
+            else
+
+            {
+
+                document.getElementById('ReviewWdvl').innerHTML = 'No';
+
+            }
+
+            // Special case to display password as asterisks
+
+            var iCounter = 1;
+
+            var iCharacterCount = document.getElementById('TextPassword').value.length;
+
+            var passwordMasked = '';
+
+            for (iCounter = 1; iCounter <= iCharacterCount; iCounter++)
+
+            {
+
+                passwordMasked = passwordMasked + '*';
+
+            }
+
+            document.getElementById('ReviewPassword').innerHTML = passwordMasked;
+
+        }
+
+    </script>
+    
+    
+    <style>
+        #customers
+        {
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        
+        border-collapse:collapse;
+        }
+        #customers td, #customers th 
+        {
+        font-size:0.9em;
+        border:2px  solid #1b1b1b;
+        padding:3px 7px 2px 7px;
+        }
+        #customers th 
+        {
+        font-size:1.0em;
+        text-align:left;
+        padding-top:5px;
+        padding-bottom:4px;
+        background-color:#cccccc;
+        color:#1b1b1b;
+        }
+        #customers tr.alt td 
+        {
+        color:#000;
+        background-color:#cccfff;
+        }
+		
+		
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+        </style>
+
+</head>
+
+<body>
+<div id="wrapper ">
+<div class="bg"><a href=""></a>
+  <div class="intro">ELECTRONIC DISEASE EARLY WARNING & RESPONSE SYSTEM</div>
+  </div>
+<div class="form">
+<form id="SubscriptionWizard" action="" method="post">
+
+<div id="HeaderTableStep1" style="background-color:Yellow; display: inline-block;"><h3>Step 1</h3></div>
+<div id="HeaderTableStep2" style="background-color:Silver; display: inline-block"><h3>Step 2</h3></div>
+<div id="HeaderTableStep3" style="background-color:Silver; display: inline-block"><h3>Step 3</h3></div>
+<div id="HeaderTableStep4" style="background-color:Silver; display: inline-block"><h3>Step 4</h3></div>
+<div id="HeaderTableStep5" style="background-color:Silver; display: inline-block"><h3>Finish</h3></div>
+
+       
+   
+    <br />
+    
+
+
+<span id="Step1">
+ <div class="intro">Respiratory Diseases	</div>
+
+<ul>
+         <h3>SARI < 5yr</h3>
+         <li>
+
+ <label>MALE</label>
+ <input type="text" id="SARI_u_f_male" />
+          </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" id="SARI_u_f_female"/>
+         </li>
+         <h3>SARI > 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>ILI < 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>ILI > 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+
+         </ul>
+
+</span>
+
+<span id="Step2" style="display:none">
+
+ <div class="intro">Gastro Intestinal Tract Disease</div>
+
+    <ul>
+         <h3>OAD < 5yr</h3>
+         <li>
+
+ <label>MALE</label>
+ <input type="text" />
+          </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>OAD > 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>ILI < 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>ILI > 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+
+         </ul>
+
+</span>
+
+<span id="Step3" style="display:none">
+
+    <div class="intro">Vaccine Preventable Diseases</div>
+
+    <ul>
+         <h3>OAD < 5yr</h3>
+         <li>
+
+ <label>MALE</label>
+ <input type="text" />
+          </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>OAD > 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>ILI < 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>ILI > 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+
+         </ul>
+
+</span>
+
+<span id="Step4" style="display:none">
+    
+     <div class="intro">Other Communicable Diseases</div>
+
+    <ul>
+         <h3>OAD < 5yr</h3>
+         <li>
+
+ <label>MALE</label>
+ <input type="text" />
+          </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>OAD > 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>ILI < 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+         <h3>ILI > 5yr</h3>
+         <li>
+ <!---->
+
+ <label>MALE</label>
+ <input type="text" />
+         </li>
+         <li>
+  <label>FEMALE</label>
+ <input type="text" />
+         </li>
+
+         </ul>
+
+</span>
+
+<span id="Step5" style="display:none">
+
+    <table border="0" cellpadding="5" cellspacing="0">
+
+        <tr>
+
+            <td colspan="2">
+
+                <strong>Final Review:</strong></td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                First name:</td>
+
+            <td id="ReviewFirstName">
+
+                </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Middle name:</td>
+
+            <td id="ReviewMiddleName">
+
+                </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Last name:</td>
+
+            <td id="ReviewLastName">
+
+                </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Email:</td>
+
+            <td id="ReviewEmail">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Password:</td>
+
+            <td id="ReviewPassword">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="left">
+
+                <strong>
+
+                Subscribed to:</strong></td>
+
+            <td>
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                HtmlGoodies.com:</td>
+
+            <td id="ReviewHtmlGoodies">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                JavaScript.com:</td>
+
+            <td id="ReviewJavaScript">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                wdvl.com:</td>
+
+            <td id="ReviewWdvl">
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</span>
+
+<br />    
+
+<table border="0" cellpadding="5" cellspacing="0">
+
+    <tr>
+
+        <td>
+
+            <input id="ButtonPrevious" type="button" value="Previous" disabled="disabled" name="" onclick="handleWizardPrevious()" /></td>
+
+        <td>
+
+            <input id="ButtonNext" type="button" value="Next" name="Step2" onclick="handleWizardNext()" /></td>
+
+        <td>
+
+            <input id="SubmitFinal" type="submit" value="Finish" disabled="disabled" /></td>
+
+    </tr>
+
+</table>
+
+</form>
+</div>
+</div>
+</body>
+
+</html>

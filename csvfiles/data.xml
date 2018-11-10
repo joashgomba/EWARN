@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<charts>
+  <chart>
+  	<series>
+  		<name>Status projecten</name>
+  		<type>pie</type>
+  		<data>
+  			<categorie>gerealiseerd</categorie>
+  			<point>45.0</point>
+  			<url>http://www.google.be</url>
+  		</data>
+  		<data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+  		</data>
+  		<data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+  		</data>
+  		<data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+  		</data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+  	</series>
+  	<title>
+  	  chart title
+  	</title>
+  	<text>
+  	  chart text
+  	</text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+  <chart>
+    <series>
+      <name>Status projecten</name>
+      <type>pie</type>
+      <data>
+        <categorie>gerealiseerd</categorie>
+        <point>45.0</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie><a href="http://www.google.be">OK</a></categorie>
+        <point>26.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>met vertraging</categorie>
+        <point>12.8</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>niet OK</categorie>
+        <point>8.5</point>
+        <url>http://www.google.be</url>
+      </data>
+      <data>
+        <categorie>onbekend</categorie>
+        <point>6.9</point>
+        <url>http://www.google.be</url>
+      </data>
+    </series>
+    <title>
+      chart title
+    </title>
+    <text>
+      chart text
+    </text>
+  </chart>
+</charts>

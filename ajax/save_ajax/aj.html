@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("jquery", "1.4");
+</script>
+<script type="text/javascript" src="./js/forms.js"></script>
+<script type="text/javascript" src="./js/save.js"></script>
+</head>
+<body>
+<form id="personal_details" action="process.php" method="post">
+	<fieldset>
+		<legend>Personal Details</legend>
+		<label for="name">Name</label>
+		<input type="text" name="name"/>
+		<label for="age_range">Age</label>
+		<select name="age_range">
+			<option value="">Please select an age range</option>
+			<option value="1">0-12</option>
+			<option value="2">12-16</option>
+			<option value="3">16-21</option>
+			<option value="4">21-30</option>
+			<option value="5">30-50</option>
+			<option value="6">50+</option>
+		</select>
+		<label for="sports">Please select your favourite sports</label>
+		<input type="checkbox" name="sports[]" value="soccer" />&nbsp;Soccer<br />
+		<input type="checkbox" name="sports[]" value="swimming" />&nbsp;Swimming<br />
+		<input type="checkbox" name="sports[]" value="cycling" />&nbsp;Cycling<br />
+		<input type="checkbox" name="sports[]" value="kayaking" />&nbsp;Kayaking<br />
+		<input type="checkbox" name="sports[]" value="volleyball" />&nbsp;Volleyball<br />
+		<input type="checkbox" name="sports[]" value="basketball" />&nbsp;Basketball<br />
+		<button type="button" onclick="processDetails();">Submit</button>
+		<div style="clear:both;"></div>
+	</fieldset>
+</form>
+</body>
+</html>

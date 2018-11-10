@@ -1,0 +1,5 @@
+Completeness is the number of hf submitting reports
+
+timelines z the # of hf submiting reports on stipulated time lines
+
+Completeness is the measure of expected reports for the hf in system independent of time..includes late reports

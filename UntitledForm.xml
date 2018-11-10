@@ -1,0 +1,53 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Untitled Form</h:title>
+    <model>
+      <instance>
+        <data id="build_Untitled-Form_1425288602">
+          <meta>
+            <instanceID/>
+          </meta>
+          <age/>
+          <no_of_children/>
+          <income/>
+          <date_captured/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="eng">
+          <text id="/data/age:label">
+            <value>Age</value>
+          </text>
+          <text id="/data/no_of_children:label">
+            <value>Number of Children</value>
+          </text>
+          <text id="/data/income:label">
+            <value>Income</value>
+          </text>
+          <text id="/data/date_captured:label">
+            <value>Date Captured</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+      <bind nodeset="/data/age" type="string"/>
+      <bind nodeset="/data/no_of_children" type="string"/>
+      <bind nodeset="/data/income" type="string"/>
+      <bind nodeset="/data/date_captured" type="date"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/age">
+      <label ref="jr:itext('/data/age:label')"/>
+    </input>
+    <input ref="/data/no_of_children">
+      <label ref="jr:itext('/data/no_of_children:label')"/>
+    </input>
+    <input ref="/data/income">
+      <label ref="jr:itext('/data/income:label')"/>
+    </input>
+    <input ref="/data/date_captured">
+      <label ref="jr:itext('/data/date_captured:label')"/>
+    </input>
+  </h:body>
+</h:html>

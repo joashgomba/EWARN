@@ -1,0 +1,22 @@
+#personal_details {
+	width:400px;
+	font-family:georgia,helvtica,serif;
+}
+
+#personal_details label {
+	color:#777;
+	font-size:11pt;
+	display:block;
+}
+
+#personal_details input, select {
+	margin-bottom:20px;
+}
+
+#personal_details button {
+	float:right;
+}
+
+#personal_details fieldset {
+	background:#DCEEF4;
+}
