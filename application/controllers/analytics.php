@@ -2790,6 +2790,555 @@ class Analytics extends CI_Controller {
 
     }
 
+    public function diseasetrend()
+    {
+        if (!$this->erkanaauth->try_session_login()) {
+
+            redirect('login', 'refresh');
+
+        }
+
+        $data = array();
+
+        $level = $this->erkanaauth->getField('level');
+        $country_id = $this->erkanaauth->getField('country_id');
+
+        if (getRole() != 'SuperAdmin' && getRole() != 'Admin' && $level != 2 && $level != 1 && $level != 4 && $level != 5) {
+
+            redirect('home', 'refresh');
+
+        }
+
+        if ($level == 6) {//District
+            $district_id = $this->erkanaauth->getField('district_id');
+            $district = $this->districtsmodel->get_by_id($district_id)->row();
+            $region = $this->regionsmodel->get_by_id($district->region_id)->row();
+            $data['district'] = $district;
+            $data['zone']     = $this->zonesmodel->get_by_id($region->zone_id)->row();
+            $data['region'] = $this->regionsmodel->get_by_id($region->id)->row();
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_by_district_list($district_id);
+        }
+
+        if($level==2)//FP
+        {
+
+            $region_id = $this->erkanaauth->getField('region_id');
+            $region = $this->regionsmodel->get_by_id($region_id)->row();
+            $data['zone'] = $this->zonesmodel->get_by_id($region->zone_id)->row();
+            $data['region'] = $this->regionsmodel->get_by_id($region->id)->row();
+            $data['districts'] = $this->districtsmodel->get_by_region($region->id);
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_by_region($region->id);
+
+        }
+        if($level==1)//zonal
+        {
+            $zone_id = $this->erkanaauth->getField('zone_id');
+            $data['zone'] = $this->zonesmodel->get_by_id($zone_id)->row();
+            $data['regions'] = $this->regionsmodel->get_by_zone($zone_id);
+            $data['districts'] = $this->districtsmodel->get_by_zone($zone_id);
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_by_zone($zone_id);
+        }
+
+        if($level==4)//national
+        {
+            $data['regions'] = $this->regionsmodel->get_list();
+            $data['districts'] = $this->districtsmodel->get_list();
+            $data['zones'] = $this->zonesmodel->get_country_list($country_id);
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_list();
+        }
+
+        if($level==5)//stakeholder
+        {
+            $data['regions'] = $this->regionsmodel->get_list();
+            $data['districts'] = $this->districtsmodel->get_list();
+            $data['zones'] = $this->zonesmodel->get_list();
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_list();
+        }
+
+        $data['level'] = $level;
+
+        $diseasecount = $this->diseasesmodel->get_country_list($country_id);
+        $limit = count($diseasecount);
+
+        $diseases = $this->db->get_where('diseases', array('country_id' => $country_id),$limit);
+        $data['diseases'] = $diseases;
+
+
+        $this->load->view('analytics/diseasetrend', $data);
+    }
+
+
+    public function diseasetrendreport()
+    {
+        if (!$this->erkanaauth->try_session_login()) {
+
+            redirect('login','refresh');
+
+        }
+
+        $data = array();
+
+        $zone_id = $this->input->post('zone_id');
+        $region_id = $this->input->post('region_id');
+        $district_id = $this->input->post('district_id');
+        $healthfacility_id = $this->input->post('healthfacility_id');
+
+        $reporting_year = $this->input->post('reporting_year');
+        $from = $this->input->post('week_no');
+        $reporting_year2 = $this->input->post('reporting_year2');
+        $to = $this->input->post('week_no2');
+        $disease_id = $this->input->post('disease_id');
+
+
+        $country_id = $this->erkanaauth->getField('country_id');
+
+        $level = $this->erkanaauth->getField('level');
+
+        if (getRole() != 'SuperAdmin' && getRole() != 'Admin' && $level != 2 && $level != 1 && $level != 4 && $level != 5) {
+
+            redirect('home', 'refresh');
+
+        }
+
+        if ($level == 6) {//District
+            $district_id = $this->erkanaauth->getField('district_id');
+            $district = $this->districtsmodel->get_by_id($district_id)->row();
+            $region = $this->regionsmodel->get_by_id($district->region_id)->row();
+            $data['district'] = $district;
+            $data['zone']     = $this->zonesmodel->get_by_id($region->zone_id)->row();
+            $data['region'] = $this->regionsmodel->get_by_id($region->id)->row();
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_by_district_list($district_id);
+        }
+
+        if($level==2)//FP
+        {
+
+            $region_id = $this->erkanaauth->getField('region_id');
+            $region = $this->regionsmodel->get_by_id($region_id)->row();
+            $data['zone'] = $this->zonesmodel->get_by_id($region->zone_id)->row();
+            $data['region'] = $this->regionsmodel->get_by_id($region->id)->row();
+            $data['districts'] = $this->districtsmodel->get_by_region($region->id);
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_by_region($region->id);
+
+        }
+        if($level==1)//zonal
+        {
+            $zone_id = $this->erkanaauth->getField('zone_id');
+            $data['zone'] = $this->zonesmodel->get_by_id($zone_id)->row();
+            $data['regions'] = $this->regionsmodel->get_by_zone($zone_id);
+            $data['districts'] = $this->districtsmodel->get_by_zone($zone_id);
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_by_zone($zone_id);
+        }
+
+        if($level==4)//national
+        {
+            $data['regions'] = $this->regionsmodel->get_list();
+            $data['districts'] = $this->districtsmodel->get_list();
+            $data['zones'] = $this->zonesmodel->get_country_list($country_id);
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_list();
+        }
+
+        if($level==5)//stakeholder
+        {
+            $data['regions'] = $this->regionsmodel->get_list();
+            $data['districts'] = $this->districtsmodel->get_list();
+            $data['zones'] = $this->zonesmodel->get_list();
+            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_list();
+        }
+
+        $data['level'] = $level;
+
+
+        if(empty($zone_id))
+        {
+            $zon_id = 0;
+            $data['thezone'] = 'All';
+        }
+        else
+        {
+            $zon_id = $zone_id;
+            $zone = $this->zonesmodel->get_by_id($zone_id)->row();
+            $data['thezone'] = $zone->zone;
+        }
+
+        if(empty($region_id))
+        {
+            $reg_id = 0;
+            $data['theregion'] = 'All';
+        }
+        else
+        {
+            $reg_id = $region_id;
+            $region = $this->regionsmodel->get_by_id($region_id)->row();
+            $data['theregion'] = $region->region;
+        }
+
+        if(empty($district_id))
+        {
+            $dist_id = 0;
+            $data['thedistrict'] = 'All';
+        }
+        else
+        {
+            $dist_id = $district_id;
+            $district = $this->districtsmodel->get_by_id($district_id)->row();
+            $data['thedistrict'] = $district->district;
+        }
+
+        if(empty($healthfacility_id))
+        {
+            $hf_id = 0;
+            $data['thehealthfacility'] = 'All';
+        }
+        else
+        {
+            $hf_id = $healthfacility_id;
+            $healthfacility = $this->healthfacilitiesmodel->get_by_id($healthfacility_id)->row();
+            $data['thehealthfacility'] = $healthfacility->health_facility;
+        }
+
+        $reportingperiod_one = $this->epdcalendarmodel->get_by_year_week($reporting_year,$from)->row();
+        $reportingperiod_two = $this->epdcalendarmodel->get_by_year_week($reporting_year2,$to)->row();
+
+        $start_date = $reportingperiod_one->from;
+
+        $end_date = $reportingperiod_two->to;
+
+        $epilists = $this->epdcalendarmodel->get_list_by_date($start_date,$end_date,$country_id);
+
+        $epicalendaridArray = array();
+        //previous year EPI calendar array
+        $previousepiarray = array();
+        $previous_year = ($reporting_year-1);
+        $category = '';
+
+        foreach($epilists as $key=>$epilist)
+        {
+            $epicalendaridArray[] =  $epilist->id;
+
+            $previousepicalendar = $this->epdcalendarmodel->get_by_year_week_country($previous_year,$epilist->week_no,$country_id)->row();
+            $previousepiarray[] =  $previousepicalendar->id;
+            $category .= "'WK.".$epilist->week_no."',";
+
+
+        }
+
+
+        $table = '<table id="datatable" border="1"><thead>';
+        $table .= '<tr><th colspan="3">'.$reporting_year.'</th></tr>';
+        $table .= '<tr><th>EPI Week</th><th>Cases</th><th>Percentage</th></tr>';
+        $table .= '</theaad>';
+        $table .= '<tbody>';
+
+        $disease = $this->diseasesmodel->get_by_id($disease_id)->row();
+
+        $measleslists = $this->reportsmodel->get_list_disease_sum($epicalendaridArray, $dist_id, $reg_id, $zon_id, $hf_id,$disease->disease_code);
+        $measseries = '{';
+        $measseries .= "name: '".$reporting_year."',";
+        $measseries .= 'data: [';
+
+        $bgcolor = 'bgcolor="#CCCCCC"';
+
+        foreach($measleslists as $key=>$measleslist)
+        {
+            if($bgcolor == 'bgcolor="#CCCCCC"')
+            {
+                $bgcolor = '';
+            }
+            else
+            {
+                $bgcolor = 'bgcolor="#CCCCCC"';
+            }
+
+            $table .=  '<tr '.$bgcolor.'><td>Week '.$measleslist->week_no.'</td>';
+            $weekcases = $this->reportsmodel->get_list_sum($measleslist->epicalendar_id, $dist_id, $reg_id, $zon_id, $hf_id);
+            $measpercent = ($measleslist->Disease_Total/$weekcases)*100;
+            $measseries .= number_format($measpercent).',';
+
+            $table .=  '<td>'.$measleslist->Disease_Total.'</td><td>'.number_format($measpercent).'%</td></tr>';
+
+            unset($weekcases);
+
+        }
+
+        unset($measleslists);
+        unset($bgcolor);
+
+
+        $measseries .= ']';
+
+        $measseries .= '},';
+
+        $table .= '</tbody>';
+        $table .= '</table>';
+
+
+        $prevtable = '<table id="datatable" border="1"><thead>';
+        $prevtable .= '<tr><th colspan="3">'.$previous_year.'</th></tr>';
+        $prevtable .= '<tr><th>EPI Week</th><th>Cases</th><th>Percentage</th></tr>';
+        $prevtable .= '</theaad>';
+        $prevtable .= '<tbody>';
+
+
+        $prevmeaslists = $this->reportsmodel->get_list_disease_sum($previousepiarray, $dist_id, $reg_id, $zon_id, $hf_id,$disease->disease_code);
+
+        $measseries .= '{';
+        $measseries .= "name: '".$previous_year."',";
+        $measseries .= 'data: [';
+
+        $bgcolor = 'bgcolor="#CCCCCC"';
+
+        foreach($prevmeaslists as $key=>$prevmeaslist)
+        {
+
+            if($bgcolor == 'bgcolor="#CCCCCC"')
+            {
+                $bgcolor = '';
+            }
+            else
+            {
+                $bgcolor = 'bgcolor="#CCCCCC"';
+            }
+
+            $prevtable .=  '<tr '.$bgcolor.'><td>Week '.$prevmeaslist->week_no.'</td>';
+
+            $prevweekcases = $this->reportsmodel->get_list_sum($prevmeaslist->epicalendar_id, $dist_id, $reg_id, $zon_id, $hf_id);
+            $measprevpercent = ($prevmeaslist->Disease_Total/$prevweekcases)*100;
+            $measseries .= number_format($measprevpercent).',';
+
+            $prevtable .=  '<td>'.$prevmeaslist->Disease_Total.'</td><td>'.number_format($measprevpercent).'%</td></tr>';
+
+            unset($prevweekcases);
+
+        }
+        unset($prevmeaslists);
+
+        $measseries .= ']';
+
+        $measseries .= '},';
+
+        $prevtable .= '</tbody>';
+
+        $prevtable .= '</table>';
+
+
+        $diseasecount = $this->diseasesmodel->get_country_list($country_id);
+        $limit = count($diseasecount);
+
+        $diseases = $this->db->get_where('diseases', array('country_id' => $country_id),$limit);
+        $data['diseases'] = $diseases;
+
+        $data['reporting_year'] = $reporting_year;
+        $data['from'] = $from;
+        $data['reporting_year2'] = $reporting_year2;
+        $data['to'] = $to;
+        $data['zone_id'] = $zon_id;
+        $data['region_id'] = $reg_id;
+        $data['district_id'] = $dist_id;
+        $data['healthfacility_id'] = $hf_id;
+        $data['category'] = $category;
+        $data['measseries'] = $measseries;
+        $data['disease_id'] = $disease_id;
+        $data['previous_year'] = $previous_year;
+        $data['mydisease'] = $disease;
+        $data['table'] = $table;
+        $data['prevtable'] = $prevtable;
+
+        $this->load->view('analytics/diseasetrendreport', $data);
+
+
+    }
+
+    public function exportdiseasetrend()
+    {
+        if (!$this->erkanaauth->try_session_login()) {
+
+            redirect('login','refresh');
+
+        }
+
+        $zone_id = $this->input->post('zone_id');
+        $region_id = $this->input->post('region_id');
+        $district_id = $this->input->post('district_id');
+        $healthfacility_id = $this->input->post('healthfacility_id');
+
+        $reporting_year = $this->input->post('reportingyear');
+        $from = $this->input->post('from');
+        $reporting_year2 = $this->input->post('reportingyear2');
+        $to = $this->input->post('to');
+
+        $disease_id = $this->input->post('mydisease_id');
+
+
+        $country_id = $this->erkanaauth->getField('country_id');
+
+        if(empty($zone_id))
+        {
+            $zon_id = 0;
+            $thezone = 'All';
+        }
+        else
+        {
+            $zon_id = $zone_id;
+            $zone = $this->zonesmodel->get_by_id($zone_id)->row();
+            $thezone = $zone->zone;
+        }
+
+        if(empty($region_id))
+        {
+            $reg_id = 0;
+            $theregion = 'All';
+        }
+        else
+        {
+            $reg_id = $region_id;
+            $region = $this->regionsmodel->get_by_id($region_id)->row();
+            $theregion = $region->region;
+        }
+
+        if(empty($district_id))
+        {
+            $dist_id = 0;
+            $thedistrict = 'All';
+        }
+        else
+        {
+            $dist_id = $district_id;
+            $district = $this->districtsmodel->get_by_id($district_id)->row();
+            $thedistrict = $district->district;
+        }
+
+        if(empty($healthfacility_id))
+        {
+            $hf_id = 0;
+            $thehealthfacility = 'All';
+        }
+        else
+        {
+            $hf_id = $healthfacility_id;
+            $healthfacility = $this->healthfacilitiesmodel->get_by_id($healthfacility_id)->row();
+            $thehealthfacility = $healthfacility->health_facility;
+        }
+
+        $reportingperiod_one = $this->epdcalendarmodel->get_by_year_week($reporting_year,$from)->row();
+        $reportingperiod_two = $this->epdcalendarmodel->get_by_year_week($reporting_year2,$to)->row();
+
+        $start_date = $reportingperiod_one->from;
+
+        $end_date = $reportingperiod_two->to;
+
+        $epilists = $this->epdcalendarmodel->get_list_by_date($start_date,$end_date,$country_id);
+
+        $epicalendaridArray = array();
+        //previous year EPI calendar array
+        $previousepiarray = array();
+        $previous_year = ($reporting_year-1);
+
+        foreach($epilists as $key=>$epilist)
+        {
+            $epicalendaridArray[] =  $epilist->id;
+
+            $previousepicalendar = $this->epdcalendarmodel->get_by_year_week_country($previous_year,$epilist->week_no,$country_id)->row();
+            $previousepiarray[] =  $previousepicalendar->id;
+
+
+        }
+
+        $disease = $this->diseasesmodel->get_by_id($disease_id)->row();
+
+        $table = '<table id="datatable" border="1"><thead>';
+        $table .= '<tr bgcolor="#13C3E6"><th colspan="3"><div align="center">Zone: '.$thezone.' Region: '.$theregion.' District: '.$thedistrict.' Health Facility: '.$thehealthfacility.'</div></th></tr>';
+        $table .= '<tr bgcolor="#13C3E6"><th colspan="3">Weekly disease trends of '.$disease->disease_name.' EPI week '.$from.' to '.$to.', '.$reporting_year.' &amp; '.$previous_year.'</th></tr>';
+        $table .= '<tr><th colspan="3">'.$reporting_year.'</th></tr>';
+        $table .= '<tr><th>EPI Week</th><th>Cases</th><th>Percentage</th></tr>';
+        $table .= '</theaad>';
+        $table .= '<tbody>';
+
+        $measleslists = $this->reportsmodel->get_list_disease_sum($epicalendaridArray, $dist_id, $reg_id, $zon_id, $hf_id,$disease->disease_code);
+
+        $bgcolor = 'bgcolor="#CCCCCC"';
+
+        foreach($measleslists as $key=>$measleslist)
+        {
+            if($bgcolor == 'bgcolor="#CCCCCC"')
+            {
+                $bgcolor = '';
+            }
+            else
+            {
+                $bgcolor = 'bgcolor="#CCCCCC"';
+            }
+
+            $table .=  '<tr '.$bgcolor.'><td>Week '.$measleslist->week_no.'</td>';
+            $weekcases = $this->reportsmodel->get_list_sum($measleslist->epicalendar_id, $dist_id, $reg_id, $zon_id, $hf_id);
+            $measpercent = ($measleslist->Disease_Total/$weekcases)*100;
+
+            $table .=  '<td>'.$measleslist->Disease_Total.'</td><td>'.number_format($measpercent).'%</td></tr>';
+
+            unset($weekcases);
+
+        }
+
+        unset($measleslists);
+        unset($bgcolor);
+
+        $table .= '</tbody>';
+        $table .= '</table>';
+
+
+        $prevtable = '<table id="datatable" border="1"><thead>';
+        $prevtable .= '<tr><th colspan="3">'.$previous_year.'</th></tr>';
+        $prevtable .= '<tr><th>EPI Week</th><th>Cases</th><th>Percentage</th></tr>';
+        $prevtable .= '</theaad>';
+        $prevtable .= '<tbody>';
+
+
+        $prevmeaslists = $this->reportsmodel->get_list_disease_sum($previousepiarray, $dist_id, $reg_id, $zon_id, $hf_id,$disease->disease_code);
+
+
+        $bgcolor = 'bgcolor="#CCCCCC"';
+
+        foreach($prevmeaslists as $key=>$prevmeaslist)
+        {
+
+            if($bgcolor == 'bgcolor="#CCCCCC"')
+            {
+                $bgcolor = '';
+            }
+            else
+            {
+                $bgcolor = 'bgcolor="#CCCCCC"';
+            }
+
+            $prevtable .=  '<tr '.$bgcolor.'><td>Week '.$prevmeaslist->week_no.'</td>';
+
+            $prevweekcases = $this->reportsmodel->get_list_sum($prevmeaslist->epicalendar_id, $dist_id, $reg_id, $zon_id, $hf_id);
+            $measprevpercent = ($prevmeaslist->Disease_Total/$prevweekcases)*100;
+
+            $prevtable .=  '<td>'.$prevmeaslist->Disease_Total.'</td><td>'.number_format($measprevpercent).'%</td></tr>';
+
+            unset($prevweekcases);
+
+        }
+        unset($prevmeaslists);
+
+        $prevtable .= '</tbody>';
+
+        $prevtable .= '</table>';
+
+        $output = $table.''.$prevtable;
+
+
+        $filename = "Week_Disease_Trends_".$disease->disease_code."_".date('dmY-his').".xls";
+
+        $this->output->set_header("Content-Type: application/vnd.ms-excel; charset=utf-8");
+        $this->output->set_header("Expires: 0");
+        $this->output->set_header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        $this->output->set_header("content-disposition: attachment;filename=".$filename."");
+
+        $this->output->append_output($output);
+    }
+
    
 
 

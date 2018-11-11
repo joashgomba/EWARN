@@ -1240,9 +1240,10 @@ for further investigations with appropriate response.</li>';
                 foreach($malarialists as $key=>$malarialist)
                 {
                     $weekcases = $this->reportsmodel->get_list_sum($malarialist->epicalendar_id, $dist_id, $reg_id, $zon_id, $hf_id);
-                    $malspercent = ($measleslist->Disease_Total/$weekcases)*100;
+                    $malspercent = ($malarialist->Disease_Total/$weekcases)*100;
                     $malsearies .= number_format($malspercent).',';
-                    unset($weekcases);
+
+                    unset( $weekcases);
 
                 }
                 unset($malarialists);

@@ -243,6 +243,33 @@ $user_country = $this->countriesmodel->get_by_id($user_country_id)->row();
                                     Completeness vs Consultations
                                 </a>
                             </li>
+                            <li <?php if($active_method=='weeklytrends' || $active_method=='weeklytrendsreport' || $active_method=='diseasetrend' || $active_method=='diseasetrendreport'){ echo 'class="active"';}?>>
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="icon-double-angle-right"></i>
+
+                                    Weekly Trends
+                                    <b class="arrow icon-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+
+
+                                       <!-- <li <?php if($active_method=='weeklytrends' || $active_method=='weeklytrendsreport'){ echo 'class="active"';}?>>
+                                            <a href="<?php echo site_url('analytics/weeklytrends')?>">
+                                                Disease Category
+                                            </a>
+                                        </li>-->
+
+
+                                    <li <?php if($active_method=='diseasetrend' || $active_method=='diseasetrendreport'){ echo 'class="active"';} ?>>
+                                        <a href="<?php echo site_url('analytics/diseasetrend')?>">
+                                            Diseases
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
                             <li <?php if( $active_method=='ageandsex' || $active_method=='ageandsexreport'){ echo 'class="active"';}?>>
                                 <a href="<?php echo site_url('analytics/ageandsex')?>">
                                     <i class="icon-double-angle-right"></i>
