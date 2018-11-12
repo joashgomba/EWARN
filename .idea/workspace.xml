@@ -2,54 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa47aebf-a826-4fa8-bbdd-1efc8943a183" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/analytics/diseasetrend.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/analytics/diseasetrendreport.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/alerts_SOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/alerts_SOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/alerts_SOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/alerts_SOM_28_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/chart.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/distribution_SOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/distribution_SOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/distribution_SOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/distribution_SOM_28_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/epicurve_SOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/epicurve_SOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/epicurve_SOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/epicurve_SOM_28_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/gastro_curve_SOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/gastro_curve_SOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/gastro_curve_SOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/gastro_curve_SOM_28_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/leadingdisease_SOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/leadingdisease_SOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/leadingdisease_SOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/leadingdisease_SOM_28_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/malaria_curve_SOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/malaria_curve_SOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/malaria_curve_SOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/malaria_curve_SOM_28_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/measles_curve_SOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/measles_curve_SOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/measles_curve_SOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/measles_curve_SOM_28_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/proportional_morbiditySOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/proportional_morbiditySOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/proportional_morbiditySOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/proportional_morbiditySOM_28_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/rates_SOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/rates_SOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/rates_SOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/rates_SOM_28_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/respiratory_curve_SOM_21_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/respiratory_curve_SOM_22_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/respiratory_curve_SOM_27_2017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/reportelements/respiratory_curve_SOM_28_2017.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/reportelements/malaria_curve_SOM_20_2017.jpg" afterPath="$PROJECT_DIR$/images/reportelements/malaria_curve_SOM_20_2017.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/analytics/weeklytrends.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/analytics/weeklytrendsreport.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/analytics.php" afterPath="$PROJECT_DIR$/application/controllers/analytics.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/epibulletins.php" afterPath="$PROJECT_DIR$/application/controllers/epibulletins.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/forms.php" afterPath="$PROJECT_DIR$/application/controllers/forms.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/sidebar.php" afterPath="$PROJECT_DIR$/application/views/common/sidebar.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +20,8 @@
       <file leaf-file-name="epibulletins.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/epibulletins.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="1265" column="20" lean-forward="false" selection-start-line="1265" selection-start-column="20" selection-end-line="1265" selection-end-column="20" />
+            <state relative-caret-position="386">
+              <caret line="1135" column="36" lean-forward="true" selection-start-line="1095" selection-start-column="16" selection-end-line="1135" selection-end-column="36" />
               <folding>
                 <marker date="1541960640233" expanded="true" signature="2851:3134" ph="..." />
                 <marker date="1541960640233" expanded="true" signature="2975:3125" ph="..." />
@@ -336,11 +292,49 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="analytics.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/analytics.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1425">
+              <caret line="3620" column="53" lean-forward="true" selection-start-line="3620" selection-start-column="53" selection-end-line="3620" selection-end-column="53" />
+              <folding>
+                <marker date="1542016546270" expanded="true" signature="10007:10025" ph="..." />
+                <marker date="1542016546270" expanded="true" signature="10015:10021" ph=" " />
+                <marker date="1542016546270" expanded="true" signature="14953:14969" ph="..." />
+                <marker date="1542016546270" expanded="true" signature="14953:14973" ph="..." />
+                <marker date="1542016546270" expanded="true" signature="39964:39984" ph="..." />
+                <marker date="1542016546270" expanded="true" signature="45114:45538" ph="..." />
+                <marker date="1542016546270" expanded="true" signature="45317:45337" ph="..." />
+                <marker date="1542016546270" expanded="true" signature="85603:85609" ph=" " />
+                <marker date="1542016546270" expanded="true" signature="90852:90858" ph=" " />
+                <marker date="1542016546270" expanded="true" signature="109091:109096" ph="&amp;" />
+                <marker date="1542016546270" expanded="true" signature="128257:128262" ph="&amp;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weeklytrendsreport.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/analytics/weeklytrendsreport.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="823" column="95" lean-forward="false" selection-start-line="823" selection-start-column="75" selection-end-line="823" selection-end-column="95" />
+              <folding>
+                <element signature="e#42176#42181#0#HTML" expanded="true" />
+                <marker date="1542015425418" expanded="true" signature="3427:3439" ph="..." />
+                <marker date="1542015425418" expanded="true" signature="4222:4234" ph="..." />
+                <marker date="1542015425418" expanded="true" signature="4958:4970" ph="..." />
+                <marker date="1542015425418" expanded="true" signature="5949:5961" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="buletintemplate.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/epibulletins/buletintemplate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1400">
-              <caret line="1704" column="42" lean-forward="false" selection-start-line="1704" selection-start-column="42" selection-end-line="1704" selection-end-column="42" />
+            <state relative-caret-position="266">
+              <caret line="1296" column="33" lean-forward="true" selection-start-line="1250" selection-start-column="23" selection-end-line="1296" selection-end-column="33" />
               <folding>
                 <marker date="1541671228947" expanded="true" signature="60845:60884" ph="..." />
               </folding>
@@ -351,29 +345,23 @@
       <file leaf-file-name="sidebar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/common/sidebar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="256" column="43" lean-forward="false" selection-start-line="256" selection-start-column="43" selection-end-line="256" selection-end-column="43" />
+            <state relative-caret-position="413">
+              <caret line="265" column="54" lean-forward="true" selection-start-line="265" selection-start-column="54" selection-end-line="265" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analytics.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/analytics.php">
+      <file leaf-file-name="weeklytrends.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/analytics/weeklytrends.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="3337" column="0" lean-forward="true" selection-start-line="3337" selection-start-column="0" selection-end-line="3337" selection-end-column="0" />
+            <state relative-caret-position="563">
+              <caret line="625" column="57" lean-forward="true" selection-start-line="614" selection-start-column="48" selection-end-line="625" selection-end-column="57" />
               <folding>
-                <marker date="1541972908161" expanded="true" signature="10007:10025" ph="..." />
-                <marker date="1541972908161" expanded="true" signature="10015:10021" ph=" " />
-                <marker date="1541972908161" expanded="true" signature="14953:14969" ph="..." />
-                <marker date="1541972908161" expanded="true" signature="14953:14973" ph="..." />
-                <marker date="1541972908161" expanded="true" signature="39964:39984" ph="..." />
-                <marker date="1541972908161" expanded="true" signature="45114:45538" ph="..." />
-                <marker date="1541972908161" expanded="true" signature="45317:45337" ph="..." />
-                <marker date="1541972908161" expanded="true" signature="85603:85609" ph=" " />
-                <marker date="1541972908161" expanded="true" signature="90852:90858" ph=" " />
-                <marker date="1541972908161" expanded="true" signature="109091:109096" ph="&amp;" />
+                <marker date="1542009671660" expanded="true" signature="2724:2736" ph="..." />
+                <marker date="1542009671660" expanded="true" signature="3519:3531" ph="..." />
+                <marker date="1542009671660" expanded="true" signature="4255:4267" ph="..." />
+                <marker date="1542009671660" expanded="true" signature="5246:5258" ph="..." />
               </folding>
             </state>
           </provider>
@@ -421,8 +409,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/highcharts/examples/sunburst/index.htm" />
-        <option value="$PROJECT_DIR$/highcharts/examples/sunburst/analysis.htm" />
         <option value="$PROJECT_DIR$/application/controllers/receipts.php" />
         <option value="$PROJECT_DIR$/application/controllers/users.php" />
         <option value="$PROJECT_DIR$/application/controllers/validate.php" />
@@ -470,8 +456,10 @@
         <option value="$PROJECT_DIR$/application/views/analytics/diseasetrend.php" />
         <option value="$PROJECT_DIR$/application/controllers/epibulletins.php" />
         <option value="$PROJECT_DIR$/application/views/analytics/diseasetrendreport.php" />
-        <option value="$PROJECT_DIR$/application/controllers/analytics.php" />
         <option value="$PROJECT_DIR$/application/views/common/sidebar.php" />
+        <option value="$PROJECT_DIR$/application/views/analytics/weeklytrends.php" />
+        <option value="$PROJECT_DIR$/application/views/analytics/weeklytrendsreport.php" />
+        <option value="$PROJECT_DIR$/application/controllers/analytics.php" />
       </list>
     </option>
   </component>
@@ -650,12 +638,12 @@
       <workItem from="1536005066757" duration="7591000" />
       <workItem from="1536169505104" duration="690000" />
       <workItem from="1540201012674" duration="389522000" />
-      <workItem from="1541834468119" duration="28549000" />
+      <workItem from="1541834468119" duration="35675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="616585000" />
+    <option name="totallyTimeSpent" value="623711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -718,20 +706,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/reports/diseasecasesreport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="525" column="47" lean-forward="true" selection-start-line="525" selection-start-column="47" selection-end-line="542" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/reports/healthfacilityalertreport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="437" column="69" lean-forward="false" selection-start-line="437" selection-start-column="56" selection-end-line="437" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myuploads.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1808,16 +1782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/epibulletins/buletintemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="1704" column="42" lean-forward="false" selection-start-line="1704" selection-start-column="42" selection-end-line="1704" selection-end-column="42" />
-          <folding>
-            <marker date="1541671228947" expanded="true" signature="60845:60884" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/analytics/diseasetrend.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1833,8 +1797,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/epibulletins.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="1265" column="20" lean-forward="false" selection-start-line="1265" selection-start-column="20" selection-end-line="1265" selection-end-column="20" />
+        <state relative-caret-position="386">
+          <caret line="1135" column="36" lean-forward="true" selection-start-line="1095" selection-start-column="16" selection-end-line="1135" selection-end-column="36" />
           <folding>
             <marker date="1541960640233" expanded="true" signature="2851:3134" ph="..." />
             <marker date="1541960640233" expanded="true" signature="2975:3125" ph="..." />
@@ -2104,23 +2068,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/common/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="256" column="43" lean-forward="false" selection-start-line="256" selection-start-column="43" selection-end-line="256" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/analytics/diseasetrendreport.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="823" column="87" lean-forward="false" selection-start-line="823" selection-start-column="75" selection-end-line="823" selection-end-column="87" />
           <folding>
-            <element signature="e#40704#40710#0#HTML" expanded="true" />
-            <element signature="e#40806#40812#0#HTML" expanded="true" />
-            <element signature="e#42117#42122#0#HTML" expanded="true" />
-            <element signature="e#46365#46370#0#HTML" expanded="true" />
             <marker date="1541970324665" expanded="true" signature="3427:3439" ph="..." />
             <marker date="1541970324665" expanded="true" signature="4222:4234" ph="..." />
             <marker date="1541970324665" expanded="true" signature="4958:4970" ph="..." />
@@ -2129,21 +2081,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/analytics/weeklytrends.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="625" column="57" lean-forward="true" selection-start-line="614" selection-start-column="48" selection-end-line="625" selection-end-column="57" />
+          <folding>
+            <marker date="1542009671660" expanded="true" signature="2724:2736" ph="..." />
+            <marker date="1542009671660" expanded="true" signature="3519:3531" ph="..." />
+            <marker date="1542009671660" expanded="true" signature="4255:4267" ph="..." />
+            <marker date="1542009671660" expanded="true" signature="5246:5258" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/common/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="265" column="54" lean-forward="true" selection-start-line="265" selection-start-column="54" selection-end-line="265" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/epibulletins/buletintemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="1296" column="33" lean-forward="true" selection-start-line="1250" selection-start-column="23" selection-end-line="1296" selection-end-column="33" />
+          <folding>
+            <marker date="1541671228947" expanded="true" signature="60845:60884" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/analytics/weeklytrendsreport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="823" column="95" lean-forward="false" selection-start-line="823" selection-start-column="75" selection-end-line="823" selection-end-column="95" />
+          <folding>
+            <element signature="e#42176#42181#0#HTML" expanded="true" />
+            <marker date="1542015425418" expanded="true" signature="3427:3439" ph="..." />
+            <marker date="1542015425418" expanded="true" signature="4222:4234" ph="..." />
+            <marker date="1542015425418" expanded="true" signature="4958:4970" ph="..." />
+            <marker date="1542015425418" expanded="true" signature="5949:5961" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/analytics.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="3337" column="0" lean-forward="true" selection-start-line="3337" selection-start-column="0" selection-end-line="3337" selection-end-column="0" />
+        <state relative-caret-position="1425">
+          <caret line="3620" column="53" lean-forward="true" selection-start-line="3620" selection-start-column="53" selection-end-line="3620" selection-end-column="53" />
           <folding>
-            <marker date="1541972908161" expanded="true" signature="10007:10025" ph="..." />
-            <marker date="1541972908161" expanded="true" signature="10015:10021" ph=" " />
-            <marker date="1541972908161" expanded="true" signature="14953:14969" ph="..." />
-            <marker date="1541972908161" expanded="true" signature="14953:14973" ph="..." />
-            <marker date="1541972908161" expanded="true" signature="39964:39984" ph="..." />
-            <marker date="1541972908161" expanded="true" signature="45114:45538" ph="..." />
-            <marker date="1541972908161" expanded="true" signature="45317:45337" ph="..." />
-            <marker date="1541972908161" expanded="true" signature="85603:85609" ph=" " />
-            <marker date="1541972908161" expanded="true" signature="90852:90858" ph=" " />
-            <marker date="1541972908161" expanded="true" signature="109091:109096" ph="&amp;" />
+            <marker date="1542016546270" expanded="true" signature="10007:10025" ph="..." />
+            <marker date="1542016546270" expanded="true" signature="10015:10021" ph=" " />
+            <marker date="1542016546270" expanded="true" signature="14953:14969" ph="..." />
+            <marker date="1542016546270" expanded="true" signature="14953:14973" ph="..." />
+            <marker date="1542016546270" expanded="true" signature="39964:39984" ph="..." />
+            <marker date="1542016546270" expanded="true" signature="45114:45538" ph="..." />
+            <marker date="1542016546270" expanded="true" signature="45317:45337" ph="..." />
+            <marker date="1542016546270" expanded="true" signature="85603:85609" ph=" " />
+            <marker date="1542016546270" expanded="true" signature="90852:90858" ph=" " />
+            <marker date="1542016546270" expanded="true" signature="109091:109096" ph="&amp;" />
+            <marker date="1542016546270" expanded="true" signature="128257:128262" ph="&amp;" />
           </folding>
         </state>
       </provider>

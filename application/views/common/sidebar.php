@@ -254,16 +254,16 @@ $user_country = $this->countriesmodel->get_by_id($user_country_id)->row();
                                 <ul class="submenu">
 
 
-                                       <!-- <li <?php if($active_method=='weeklytrends' || $active_method=='weeklytrendsreport'){ echo 'class="active"';}?>>
+                                       <li <?php if($active_method=='weeklytrends' || $active_method=='weeklytrendsreport'){ echo 'class="active"';}?>>
                                             <a href="<?php echo site_url('analytics/weeklytrends')?>">
-                                                Disease Category
+                                                By Disease Category
                                             </a>
-                                        </li>-->
+                                        </li>
 
 
                                     <li <?php if($active_method=='diseasetrend' || $active_method=='diseasetrendreport'){ echo 'class="active"';} ?>>
                                         <a href="<?php echo site_url('analytics/diseasetrend')?>">
-                                            Diseases
+                                            By Disease
                                         </a>
                                     </li>
 
