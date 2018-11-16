@@ -2034,7 +2034,7 @@ for further investigations with appropriate response.</li>';
         <font color="#FFFFFF"><strong>Epi Week '.$epicalendar->week_no.', '. date("d F Y", strtotime($epicalendar->from)).' - '.date("d F Y", strtotime($epicalendar->to)).'</strong></font></center>
         </th></tr>';
 
-        $highlight_text = $this->strip_HTML_tags($row->highlight_text);
+        //$highlight_text = $this->strip_HTML_tags($row->highlight_text);
 
         $html .= '<tr><td>
 <table width="100%" cellpadding="2" cellspacing="2" id="customers">
@@ -2650,8 +2650,9 @@ For further information, please contact the surveillance team on: '.$country->co
             //$highlight_text = $this->lchar($this->input->post('highlight_text'),740);
             //$interventions = $this->lchar($this->input->post('interventions'),800);
 
+
             $data = array(
-                'highlight_text' => $this->input->post('highlight_text'),
+                'highlight_text' => trim($this->input->post('highlight_text')),
                 'interventions' =>  $this->input->post('interventions'),
             );
 
@@ -2749,6 +2750,27 @@ For further information, please contact the surveillance team on: '.$country->co
     {
         $this->load->dbforge();
         $this->db->truncate('epibulletins');
+    }
+
+    public function imageupload()
+    {
+        if ($_FILES['file']['name']) {
+            if (!$_FILES['file']['error']) {
+                $name = md5(rand(100, 200));
+                $ext = explode('.', $_FILES['file']['name']);
+                $filename = $name . '.' . $ext[1];
+                $destination = './images/' . $filename; //change this directory
+                $location = $_FILES["file"]["tmp_name"];
+                move_uploaded_file($location, $destination);
+                echo base_url().'images/' . $filename;//change this URL
+            }
+            else
+            {
+                echo  $message = 'Ooops!  Your upload triggered the following error:  '.$_FILES['file']['error'];
+            }
+        }
+
+
     }
 
 

@@ -4,8 +4,16 @@
 
 		<!--basic scripts-->
 
+<?php if( $active_class=='epibulletins' && $active_method=='edit') {
+
+}
+else{?>
+
 		<!--[if !IE]>-->
 		<script src="<?php echo base_url(); ?>js/jquery.min.js"></script>
+
+
+<?php } ?>
 
 		<!--<![endif]-->
 

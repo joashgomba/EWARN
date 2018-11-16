@@ -1489,4 +1489,61 @@ Please select all the administrative levels to get the health facility.
 	   redirect('users', 'refresh');
    }
 
+    public function sendemail(){
+
+       //https://www.codexworld.com/codeigniter-send-email-gmail-smtp-server/
+        //Load email library
+        $this->load->library('email');
+
+//SMTP & mail configuration
+        $config = array(
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_port' => 465,
+            'smtp_user' => 'joashgomba@gmail.com',
+            'smtp_pass' => '1Menkaure$',
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8'
+        );
+        $this->email->initialize($config);
+        $this->email->set_mailtype("html");
+        $this->email->set_newline("\r\n");
+
+//Email content
+        $htmlContent = '<h1>Sending email via SMTP server</h1>';
+        $htmlContent .= '<p>This email has sent via SMTP server from CodeIgniter application.</p>';
+
+        $this->email->to('jasgomba@yahoo.com');
+        $this->email->from('joashgomba@gmail.com','Joash Gomba');
+        $this->email->subject('How to send email via SMTP server in CodeIgniter');
+        $this->email->message($htmlContent);
+
+        $this->email->send();
+
+
+        /**
+        $config = Array(
+        'protocol' => 'smtp',
+        'smtp_host' => 'ssl://smtp.googlemail.com',
+        'smtp_port' => 25,
+        'smtp_user' => 'joashgomba@gmail.com',
+        'smtp_pass' => '1Menkaure$',
+        );
+        $this->load->library('email', $config);
+        $this->email->set_newline("\r\n");
+        $this->email->from("joashgomba@gmail.com", "Joash Gomba");
+        $this->email->to("jasgomba@yahoo.com");
+        $this->email->subject("Testing EMails");
+        $this->email->message("It would be cool if you received this email");
+        if (!$this->email->send()) {
+        show_error($this->email->print_debugger()); }
+        else {
+        echo 'Your Email has been sent';
+        }
+
+         **/
+
+
+    }
+
 }

@@ -13,6 +13,7 @@
 			@import "<?php echo base_url(); ?>media/css/jquery.dataTables_themeroller.css";
 			@import "<?php echo base_url(); ?>examples_support/themes/smoothness/jquery-ui-1.8.4.custom.css";
 		</style>
+
         
         <script>
 		function  doMath() { 
@@ -200,6 +201,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <script type="text/javascript" src="<?php echo base_url(); ?>js/ckeditor/ckeditor.js"></script>
+
+
 
 
     </head>
