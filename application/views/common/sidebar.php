@@ -585,6 +585,13 @@ $user_country = $this->countriesmodel->get_by_id($user_country_id)->row();
                     <?php
 					}
 					?>
+
+                    <li <?php if($active_class=='support'){ echo 'class="active"';}?>>
+                        <a href="<?php echo site_url('support')?>">
+                            <i class="icon-exclamation-sign"></i>
+                            <span class="menu-text"> Support</span>
+                        </a>
+                    </li>
                    
 				</ul><!--/.nav-list-->
 
