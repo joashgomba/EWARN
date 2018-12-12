@@ -723,7 +723,7 @@ for further investigations with appropriate response.</li>';
                 $zonereportingrate = "";
 
                 $distribution_table = '<table border="1" width="100%" cellspacing="0" cellpadding="1">';
-                $distribution_table .= '<tr bgcolor="#892A24"><td><font color="#FFFFFF">'.$country->first_admin_level_label.'</font></td><td><font color="#FFFFFF">Reporting Sites</font></td><td><font color="#FFFFFF">No. Sentinal Sites</font></td><td><font color="#FFFFFF">Completeness</font></td></tr>';
+                $distribution_table .= '<tr bgcolor="#892A24"><td><font color="#FFFFFF">'.$country->first_admin_level_label.'</font></td><td><font color="#FFFFFF">Reporting Sites</font></td><td><font color="#FFFFFF">No. Sentinal Sites</font></td><td><font color="#FFFFFF">Completeness</font></td><td><font color="#FFFFFF">Timeliness</font></td></tr>';
 
                 $bgcolor = 'bgcolor = "#CCCCCC"';
                 $total_sites = 0;
@@ -746,6 +746,16 @@ for further investigations with appropriate response.</li>';
 
                     $zonereportingrate .= number_format($percentagezonereporting, 1) . ", ";
 
+                    $zone_timely_reporting_sites = $this->formsmodel->gettimelyreportingsites($epicalendar->id, $dist_id,$reg_id,$zone['id'],$hf_id);
+
+                    if($zone_reporting_sites==0)
+                    {
+                        $percentage_timeliness = 0;
+                    }
+                    else{
+                        $percentage_timeliness = ($zone_timely_reporting_sites/$zone_reporting_sites)*100;
+                    }
+
                     if($bgcolor == 'bgcolor = "#CCCCCC"')
                     {
                         $bgcolor = '';
@@ -755,7 +765,7 @@ for further investigations with appropriate response.</li>';
                         $bgcolor = 'bgcolor = "#CCCCCC"';
                     }
 
-                    $distribution_table .= '<tr '.$bgcolor.'><td>'.$zone['zone'] .'</td><td>'.$zone_reporting_sites.'</td><td>'.$hfsinzone.'</td><td>'.number_format($percentagezonereporting).'%</td></tr>';
+                    $distribution_table .= '<tr '.$bgcolor.'><td>'.$zone['zone'] .'</td><td>'.$zone_reporting_sites.'</td><td>'.$hfsinzone.'</td><td>'.number_format($percentagezonereporting).'%</td><td>'.number_format($percentage_timeliness).'%</td></tr>';
                     $total_sites = $total_sites+$zone_reporting_sites;
                     $total_sentinal = $total_sentinal+$hfsinzone;
 
@@ -774,7 +784,11 @@ for further investigations with appropriate response.</li>';
 
                 $overal_percentage = ($total_sites/$total_sentinal)*100;
 
-                $distribution_table .= '<tr bgcolor="#892A24"><td><font color="#FFFFFF">Total</font></td><td><font color="#FFFFFF">'.$total_sites.'</font></td><td><font color="#FFFFFF">'.$total_sentinal.'</font></td><td><font color="#FFFFFF">'.number_format($overal_percentage).'%</font></td></tr>';
+                $timely_reporting_sites = $this->formsmodel->gettimelyreportingsites($epicalendar->id, $dist_id,$reg_id,$zon_id,$hf_id);
+
+                $timeliness_percentage = ($timely_reporting_sites/$total_sentinal)*100;
+
+                $distribution_table .= '<tr bgcolor="#892A24"><td><font color="#FFFFFF">Total</font></td><td><font color="#FFFFFF">'.$total_sites.'</font></td><td><font color="#FFFFFF">'.$total_sentinal.'</font></td><td><font color="#FFFFFF">'.number_format($overal_percentage).'%</font></td><td>'.number_format($timeliness_percentage).'%</td></tr>';
                 $distribution_table .= '</table>';
 
                 unset($overal_percentage );
