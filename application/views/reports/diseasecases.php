@@ -573,7 +573,7 @@ function validate()
 <select name="reporting_year" id="reporting_year">
                                <option value="">Select Year</option>
                                <?php
-     $currentYear = date('Y')+1;
+     $currentYear = date('Y');
         foreach (range(2012, $currentYear) as $value) {
           ?>
            <option value="<?php echo $value;?>" <?php 
@@ -607,7 +607,7 @@ function validate()
  <select name="reporting_year2" id="reporting_year2">
                                <option value="">Select Year</option>
                                <?php
-     $currentYear = date('Y')+1;
+     $currentYear = date('Y');
         foreach (range(2012, $currentYear) as $value) {
           ?>
            <option value="<?php echo $value;?>" <?php 
