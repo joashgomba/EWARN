@@ -317,6 +317,12 @@
                         <p><div class="alert alert-danger"> <?php echo validation_errors(); ?></div></p>
                         <?php
                     }
+                    if(!empty($error_message))
+                    {
+                        ?>
+                        <p><div class="alert alert-danger"> <?php echo $error_message; ?></div></p>
+                        <?php
+                    }
                     ?>
                     <?php
                     $attributes = array('name' => 'frm', 'id' => 'frm', 'enctype' => 'multipart/form-data','onsubmit'=>'return(validate())');

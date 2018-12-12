@@ -81,6 +81,8 @@ class Analytics extends CI_Controller {
        $diseases = $this->db->get_where('diseases', array('country_id' => $country_id),$limit);
        $data['diseases'] = $diseases;
 
+       $data['error_message'] = $this->session->flashdata('error_message');
+
 
        $this->load->view('analytics/index', $data);
    }
@@ -242,7 +244,9 @@ class Analytics extends CI_Controller {
 
        if(empty($mydiseases))
        {
-           $diseseinterestarray[] = 1;
+           //$diseseinterestarray[] = 1;
+           $this->session->set_flashdata('error_message', 'Please select at least one disease to generate report.');
+           redirect('analytics','refresh');
        }
        else{
            foreach ($mydiseases as $key=>$mydisease):
@@ -1004,6 +1008,8 @@ class Analytics extends CI_Controller {
        $diseases = $this->db->get_where('diseases', array('country_id' => $country_id),$limit);
        $data['diseases'] = $diseases;
 
+       $data['error_message'] = $this->session->flashdata('error_message');
+
 
        $this->load->view('analytics/caseproportion', $data);
    }
@@ -1176,7 +1182,9 @@ class Analytics extends CI_Controller {
 
        if(empty($mydiseases))
        {
-           $diseseinterestarray[] = 1;
+           //$diseseinterestarray[] = 1;
+           $this->session->set_flashdata('error_message', 'Please select at least one disease to generate report.');
+           redirect('analytics/caseproportion','refresh');
        }
        else{
            foreach ($mydiseases as $key=>$mydisease):
@@ -2410,6 +2418,7 @@ class Analytics extends CI_Controller {
         $diseases = $this->db->get_where('diseases', array('country_id' => $country_id),$limit);
         $data['diseases'] = $diseases;
 
+        $data['error_message'] = $this->session->flashdata('error_message');
 
         $this->load->view('analytics/ageandsex', $data);
 
@@ -2554,7 +2563,9 @@ class Analytics extends CI_Controller {
 
         if(empty($mydiseases))
         {
-            $diseseinterestarray[] = 1;
+            //$diseseinterestarray[] = 1;
+            $this->session->set_flashdata('error_message', 'Please select at least one disease to generate report.');
+            redirect('analytics/ageandsex','refresh');
         }
         else{
             foreach ($mydiseases as $key=>$mydisease):

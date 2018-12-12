@@ -155,8 +155,10 @@ class Healthfacilitiesmodel extends CI_Model {
         $one=false;
         $array='array';
         $data = array();
+        $activated = 1;
         $this->db->select('t1.*, t1.id AS healthfacility_id,t2.*,t3.*,t4.*,t5.*');
         $this->db->from('healthfacilities AS t1,districts AS t2, regions AS t3, zones AS t4, countries AS t5');
+        $this->db->where('t1.activated',$activated);
         $this->db->where('t1.district_id = t2.id');
         $this->db->where('t2.region_id = t3.id');
         $this->db->where('t3.zone_id = t4.id');
