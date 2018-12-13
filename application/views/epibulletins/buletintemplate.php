@@ -1244,7 +1244,7 @@ $(window).load(function() {
     </tr>
     <tr><td>
             <table width="100%" border="1" cellpadding="3" cellspacing="0">
-                <tr bgcolor="#892A24"><td colspan="2"><font color="#FFFFFF">Weekly trends of Respiratory Diseases, Gastro Intestinal Tract Diseases, Measles, and Suspected Malaria ( Epi week <?php echo $first_week; ?> to <?php echo $last_week; ?>, <?php echo $first_year; ?> & <?php echo $previous_year;?>)</font></td></tr>
+                <tr bgcolor="#892A24"><td colspan="2"><font color="#FFFFFF">Weekly trends of Respiratory Diseases, Acute Watery Diarrhea/Sus.Cholera, Measles, and Suspected Malaria ( Epi week <?php echo $first_week; ?> to <?php echo $last_week; ?>, <?php echo $first_year; ?> & <?php echo $previous_year;?>)</font></td></tr>
 
                 <tr><td width="50%">
                         <p><div align="center"><strong>Respiratory Diseases</strong></div></p>
@@ -1382,7 +1382,7 @@ $(window).load(function() {
                         </script>
                     </td>
                     <td>
-                        <p><div align="center"><strong>Gastro Intestinal Tract Diseases</strong></div></p>
+                        <p><div align="center"><strong>Acute Watery Diarrhea/Sus.Cholera</strong></div></p>
                         <script type="text/javascript">
                             $(function () {
                                 var chart;
@@ -1424,7 +1424,7 @@ $(window).load(function() {
                                         },credits: {
                                             enabled: false
                                         },
-                                        series: [<?php echo $gastroseries; ?>]
+                                        series: [<?php echo $awdseries; ?>]
                                     });
                                 });
 
@@ -1471,7 +1471,7 @@ $(window).load(function() {
                                 },credits: {
                                     enabled: false
                                 },
-                                series: [<?php echo $gastroseries; ?>]
+                                series: [<?php echo $awdseries; ?>]
                             };
 
 

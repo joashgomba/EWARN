@@ -1153,6 +1153,7 @@ for further investigations with appropriate response.</li>';
                 $current = $current+1;
 
                 $this->outputProgress($current, $total);
+                /**
 
                 //Gastro intestinal diseases
                 $gastrolists = $this->reportsmodel->get_list_category_sum($epicalendaridArray, $dist_id, $reg_id, $zon_id, $hf_id,2);
@@ -1196,6 +1197,51 @@ for further investigations with appropriate response.</li>';
                 $gastroseries .= ']';
 
                 $gastroseries .= '},';
+
+                **/
+
+                //AWD trends
+
+                $awdlists = $this->reportsmodel->get_list_disease_sum($epicalendaridArray, $dist_id, $reg_id, $zon_id, $hf_id,'AWD');
+                $awdseries = '{';
+                $awdseries .= "name: '".$current_year."',";
+                $awdseries .= 'data: [';
+
+                foreach($awdlists as $key=>$awdlist)
+                {
+                    $weekcases = $this->reportsmodel->get_list_sum($awdlist->epicalendar_id, $dist_id, $reg_id, $zon_id, $hf_id);
+                    $awdpercent = ($awdlist->Disease_Total/$weekcases)*100;
+                    $awdseries .= number_format($awdpercent).',';
+
+                    unset( $weekcases);
+
+                }
+                unset($awdlists);
+
+                $awdseries .= ']';
+
+                $awdseries .= '},';
+
+                $prevawdlists = $this->reportsmodel->get_list_disease_sum($previousepiarray, $dist_id, $reg_id, $zon_id, $hf_id,'AWD');
+
+                $awdseries .= '{';
+                $awdseries .= "name: '".$previous_year."',";
+                $awdseries .= 'data: [';
+
+                foreach($prevawdlists as $key=>$prevawdlist)
+                {
+                    $prevweekcases = $this->reportsmodel->get_list_sum($prevawdlist->epicalendar_id, $dist_id, $reg_id, $zon_id, $hf_id);
+                    $awdprevpercent = ($prevawdlist->Disease_Total/$prevweekcases)*100;
+                    $awdseries .= number_format($awdprevpercent).',';
+                    unset($prevweekcases);
+
+                }
+
+                unset($prevmallists);
+
+                $awdseries .= ']';
+
+                $awdseries .= '},';
 
                 //Ten
                 $current = $current+1;
@@ -1287,17 +1333,21 @@ for further investigations with appropriate response.</li>';
 
                 $malsearies .= '},';
 
+
+
                 $data['respseries'] = $respseries;
                 $data['respcategory'] = $respcategory;
-                $data['gastroseries'] = $gastroseries;
+                //$data['gastroseries'] = $gastroseries;
                 $data['measseries'] = $measseries;
                 $data['malsearies'] = $malsearies;
+                $data['awdseries'] = $awdseries;
 
                 unset($respseries);
                 unset($respcategory);
-                unset($gastroseries);
+                //unset($gastroseries);
                 unset($measseries);
                 unset($malsearies);
+                unset($awdseries);
 
                 //Eleven
                 $current = $current+1;
