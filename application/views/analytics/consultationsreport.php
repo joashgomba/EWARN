@@ -143,9 +143,12 @@
             var params = "zone_id=" + totalEncode(document.frm.zone_id.value );
             var connection=connect(url,params);
 
+            var district_element = '<select id="district_id" name="district_id">' + '<option value="0">Select One</option>' + '</select>';
+
             connection.onreadystatechange = function(){
                 if(connection.readyState == 4){
                     document.getElementById('regions').innerHTML=connection.responseText;
+                    document.getElementById('districts').innerHTML= district_element;
 
 
                 }
@@ -747,7 +750,7 @@
                                             <div class="row-fluid">
                                                 <div class="span12">
                                                     <?php
-                                                    $attributes = array('name' => 'frm', 'id' => 'frm', 'enctype' => 'multipart/form-data','target'=>'_blank');
+                                                    $attributes = array('name' => 'myfrm', 'id' => 'myfrm', 'enctype' => 'multipart/form-data','target'=>'_blank');
                                                     echo form_open('analytics/exportconsultation',$attributes); ?>
 
                                                     <input type="hidden" name="zone_id" value="<?php echo $zone_id;?>">

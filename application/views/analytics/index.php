@@ -143,9 +143,14 @@
             var params = "zone_id=" + totalEncode(document.frm.zone_id.value );
             var connection=connect(url,params);
 
+            var district_element = '<select id="district_id" name="district_id">' + '<option value="0">Select One</option>' + '</select>';
+            var healthfacility_element = '<select id="healthfacility_id" name="healthfacility_id">' + '<option value="0">Select One</option>' + '</select>';
+
             connection.onreadystatechange = function(){
                 if(connection.readyState == 4){
                     document.getElementById('regions').innerHTML=connection.responseText;
+                    document.getElementById('districts').innerHTML= district_element;
+                    document.getElementById('healthfacilities').innerHTML= healthfacility_element;
 
 
                 }

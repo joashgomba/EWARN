@@ -3538,6 +3538,8 @@ class Reports extends CI_Controller {
 
        }
 
+
+
        if ($level == 6) {//District
            $district_id = $this->erkanaauth->getField('district_id');
            $district = $this->districtsmodel->get_by_id($district_id)->row();
@@ -3580,7 +3582,7 @@ class Reports extends CI_Controller {
        {
            $data['regions'] = $this->regionsmodel->get_list();
            $data['districts'] = $this->districtsmodel->get_list();
-           $data['zones'] = $this->zonesmodel->get_list();
+           $data['zones'] = $this->zonesmodel->get_country_list($country_id);
            $data['healthfacilities'] = $this->healthfacilitiesmodel->get_list();
        }
 
@@ -3767,6 +3769,7 @@ class Reports extends CI_Controller {
        $data['region_id'] = $reg_id;
        $data['district_id'] = $dist_id;
        $data['healthfacility_id'] = $hf_id;
+       $data['country_id'] = $country_id;
 
 		
 		$this->load->view('reports/malariareport', $data);

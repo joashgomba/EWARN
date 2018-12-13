@@ -28,6 +28,144 @@
 				}
 				</style>
 
+
+<script>
+
+    function trim(str){
+        return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');}
+    function totalEncode(str){
+        var s=escape(trim(str));
+        s=s.replace(/\+/g,"+");
+        s=s.replace(/@/g,"@");
+        s=s.replace(/\//g,"/");
+        s=s.replace(/\*/g,"*");
+        return(s);
+    }
+    function connect(url,params)
+    {
+        var connection;  // The variable that makes Ajax possible!
+        try{// Opera 8.0+, Firefox, Safari
+            connection = new XMLHttpRequest();}
+        catch (e){// Internet Explorer Browsers
+            try{
+                connection = new ActiveXObject("Msxml2.XMLHTTP");}
+            catch (e){
+                try{
+                    connection = new ActiveXObject("Microsoft.XMLHTTP");}
+                catch (e){// Something went wrong
+                    return false;}}}
+        connection.open("POST", url, true);
+        connection.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        connection.setRequestHeader("Content-length", params.length);
+        connection.setRequestHeader("connection", "close");
+        connection.send(params);
+        return(connection);
+    }
+
+    function validateForm(frm){
+        var errors='';
+
+        if (errors){
+            alert('The following error(s) occurred:\n'+errors);
+            return false; }
+        return true;
+    }
+
+    function openModal() {
+        document.getElementById('themodal').style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('themodal').style.display = 'none';
+        document.getElementById('fade').style.display = 'none';
+    }
+
+    function GetZones(frm){
+        if(validateForm(frm)){
+            document.getElementById('zones').innerHTML='';
+            var url = "<?php echo base_url(); ?>/index.php/users/getzones";
+
+            var params = "country_id=" + totalEncode(document.frm.country_id.value ) ;
+            var connection=connect(url,params);
+
+            connection.onreadystatechange = function(){
+                if(connection.readyState == 4){
+                    document.getElementById('zones').innerHTML=connection.responseText;
+
+
+                }
+                if((connection.readyState == 2)||(connection.readyState == 3)){document.getElementById('zones').innerHTML = '<span style="color:green;">Sending request....</span>';}}}
+    }
+
+
+    function GetHealthFacilities(frm){
+        if(validateForm(frm)){
+            document.getElementById('healthfacilities').innerHTML='';
+
+            var url = "<?php echo base_url(); ?>index.php/datalist/gethealthfacilities";
+
+            var params = "district_id=" + totalEncode(document.frm.district_id.value );
+            var connection=connect(url,params);
+
+            connection.onreadystatechange = function(){
+                if(connection.readyState == 4){
+
+                    document.getElementById('healthfacilities').innerHTML=connection.responseText;
+
+
+                }
+                if((connection.readyState == 2)||(connection.readyState == 3)){document.getElementById('healthfacilities').innerHTML = '<span style="color:green;">Sending request....</span>';}}}
+    }
+
+    function GetRegions(frm){
+        if(validateForm(frm)){
+            document.getElementById('regions').innerHTML='';
+            var url = "<?php echo base_url(); ?>index.php/users/getregions";
+
+            var params = "zone_id=" + totalEncode(document.frm.zone_id.value );
+            var connection=connect(url,params);
+
+            var district_element = '<select id="district_id" name="district_id">' + '<option value="0">Select One</option>' + '</select>';
+            var healthfacility_element = '<select id="healthfacility_id" name="healthfacility_id">' + '<option value="0">Select One</option>' + '</select>';
+
+            connection.onreadystatechange = function(){
+                if(connection.readyState == 4){
+                    document.getElementById('regions').innerHTML=connection.responseText;
+                    document.getElementById('districts').innerHTML= district_element;
+                    document.getElementById('healthfacilities').innerHTML= healthfacility_element;
+
+
+                }
+                if((connection.readyState == 2)||(connection.readyState == 3)){document.getElementById('regions').innerHTML = '<span style="color:green;">Sending request....</span>';}}}
+    }
+
+
+    function GetDistricts(frm){
+        if(validateForm(frm)){
+            document.getElementById('districts').innerHTML='';
+            var url = "<?php echo base_url(); ?>index.php/export/getdistricts";
+
+            var params = "region_id=" + totalEncode(document.frm.region_id.value );
+            var connection=connect(url,params);
+            var health_element = '<select id="healthfacility_id" name="healthfacility_id">' + '<option value="">Select One</option>' + '</select>';
+
+            connection.onreadystatechange = function(){
+                if(connection.readyState == 4){
+                    document.getElementById('districts').innerHTML=connection.responseText;
+                    document.getElementById('healthfacilities').innerHTML= health_element;
+
+
+                }
+                if((connection.readyState == 2)||(connection.readyState == 3)){document.getElementById('districts').innerHTML = '<span style="color:green;">Sending request....</span>';}}}
+    }
+
+
+
+
+
+</script>
+
 	<body>
 		<?php include(APPPATH . 'views/common/navbar.php'); ?>
 
@@ -524,7 +662,7 @@ $(function () {
                                             </p>
                                             <hr>
                                                 <?php
-                                                $attributes = array('name' => 'frm', 'id' => 'frm', 'enctype' => 'multipart/form-data','target'=>'_blank');
+                                                $attributes = array('name' => 'myfrm', 'id' => 'myfrm', 'enctype' => 'multipart/form-data','target'=>'_blank');
                                                 echo form_open('reports/exportdiseasecases',$attributes); ?>
 
                                                 <input type="hidden" name="zone_id" value="<?php echo $zone_id;?>">

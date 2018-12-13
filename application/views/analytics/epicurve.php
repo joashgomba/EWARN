@@ -143,9 +143,14 @@
             var params = "zone_id=" + totalEncode(document.frm.zone_id.value );
             var connection=connect(url,params);
 
+            var district_element = '<select id="district_id" name="district_id">' + '<option value="0">Select One</option>' + '</select>';
+            var healthfacility_element = '<select id="healthfacility_id" name="healthfacility_id">' + '<option value="0">Select One</option>' + '</select>';
+
             connection.onreadystatechange = function(){
                 if(connection.readyState == 4){
                     document.getElementById('regions').innerHTML=connection.responseText;
+                    document.getElementById('districts').innerHTML= district_element;
+                    document.getElementById('healthfacilities').innerHTML= healthfacility_element;
 
 
                 }
@@ -265,6 +270,10 @@
             }
             if (!checked) {
                 alert('Please select diseases');
+               // var holder = document.getElementById("holder");
+                //holder.focus();
+                return false;
+
             }
             return checked;
 
@@ -622,7 +631,7 @@
                                                         <div class="span6">
 
                                                             <div class="control-group"><label class="control-label" for="form-field-1">From: </label><div class="controls">
-                                                                    <select name="reporting_year" id="reporting_year">
+                                                                    <select name="reporting_year" id="reporting_year" required="required">
                                                                         <option value="">Select Year</option>
                                                                         <?php
                                                                         $currentYear = date('Y');
@@ -638,7 +647,7 @@
 
                                                                         }
                                                                         ?>
-                                                                    </select> <select name="week_no" id="week_no" >
+                                                                    </select> <select name="week_no" id="week_no" required="required">
                                                                         <option value="">Select Week</option>
                                                                         <?php
                                                                         for($i=1;$i<=52;$i++)
@@ -656,7 +665,7 @@
                                                         <div class="span6">
 
                                                             <div class="control-group"><label class="control-label" for="form-field-1">To: </label><div class="controls">
-                                                                    <select name="reporting_year2" id="reporting_year2">
+                                                                    <select name="reporting_year2" id="reporting_year2" required="required">
                                                                         <option value="">Select Year</option>
                                                                         <?php
                                                                         $currentYear = date('Y');
@@ -672,7 +681,7 @@
 
                                                                         }
                                                                         ?>
-                                                                    </select> <select name="week_no2" id="week_no2" >
+                                                                    </select> <select name="week_no2" id="week_no2" required="required">
                                                                         <option value="">Select Week</option>
                                                                         <?php
                                                                         for($i=1;$i<=52;$i++)
@@ -720,7 +729,10 @@
 
 
 
-                                            <div class="form-actions"><?php echo form_submit('submit', 'Generate Report', 'class="btn btn-info "'); ?></div>
+                                            <div class="form-actions"><?php //echo form_submit('submit', 'Generate Report', 'class="btn btn-info "'); ?>
+
+                                                <button type="submit" class="btn btn-info" onclick="return validate()">Generate Report</button>
+                                            </div>
 
 
                                     </div><!---End inner accordion--->
@@ -809,7 +821,7 @@
                                             <div class="row-fluid">
                                             <div class="span12">
                                                 <?php
-                                                $attributes = array('name' => 'frm', 'id' => 'frm', 'enctype' => 'multipart/form-data','target'=>'_blank');
+                                                $attributes = array('name' => 'myfrm', 'id' => 'myfrm', 'enctype' => 'multipart/form-data','target'=>'_blank');
                                                 echo form_open('analytics/exportcurve',$attributes); ?>
 
                                                 <input type="hidden" name="zone_id" value="<?php echo $zone_id;?>">

@@ -109,9 +109,12 @@
             var params = "zone_id=" + totalEncode(document.frm.zone_id.value );
             var connection=connect(url,params);
 
+            var district_element = '<select id="district_id" name="district_id">' + '<option value="0">Select One</option>' + '</select>';
+
             connection.onreadystatechange = function(){
                 if(connection.readyState == 4){
                     document.getElementById('regions').innerHTML=connection.responseText;
+                    document.getElementById('districts').innerHTML= district_element;
 
 
                 }
@@ -126,12 +129,12 @@
 
             var params = "region_id=" + totalEncode(document.frm.region_id.value );
             var connection=connect(url,params);
-            var health_element = '<select id="healthfacility_id" name="healthfacility_id">' + '<option value="">Select One</option>' + '</select>';
+            //var health_element = '<select id="healthfacility_id" name="healthfacility_id">' + '<option value="">Select One</option>' + '</select>';
 
             connection.onreadystatechange = function(){
                 if(connection.readyState == 4){
                     document.getElementById('districts').innerHTML=connection.responseText;
-                    document.getElementById('healthfacilities').innerHTML= health_element;
+                    //document.getElementById('healthfacilities').innerHTML= health_element;
 
 
                 }
@@ -729,7 +732,7 @@
                                             <div class="row-fluid">
                                                 <div class="span12">
                                                     <?php
-                                                    $attributes = array('name' => 'frm', 'id' => 'frm', 'enctype' => 'multipart/form-data','target'=>'_blank');
+                                                    $attributes = array('name' => 'myfrm', 'id' => 'myfrm', 'enctype' => 'multipart/form-data','target'=>'_blank');
                                                     echo form_open('analytics/exportcompleteness',$attributes); ?>
 
                                                     <input type="hidden" name="zone_id" value="<?php echo $zone_id;?>">
