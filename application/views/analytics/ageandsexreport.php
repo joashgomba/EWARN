@@ -184,49 +184,7 @@
                 return false;
             }
 
-            if( document.frm.reporting_year2.value == "" )
-            {
-                alert( "Please enter the to reporting year" );
-                document.frm.reporting_year2.focus() ;
-                return false;
-            }
-
-            if( document.frm.week_no2.value == "" )
-            {
-                alert( "Please enter the to week number" );
-                document.frm.week_no2.focus() ;
-                return false;
-            }
-
-            var e = document.getElementById("reporting_year");
-            var repyearone = e.options[e.selectedIndex].value;
-
-            var y = document.getElementById("reporting_year2");
-            var repyeartwo = y.options[y.selectedIndex].value;
-
-            var x = document.getElementById("week_no");
-            var fromval = x.options[x.selectedIndex].value;
-
-            var z = document.getElementById("week_no2");
-            var toval = z.options[z.selectedIndex].value;
-
-            if(repyearone>repyeartwo)
-            {
-                alert( "The year from cannot be greater than the year to" );
-                document.frm.reporting_year.focus() ;
-                return false;
-            }
-
-            if(repyearone==repyeartwo)
-            {
-                if(Number(fromval)>Number(toval))
-                {
-                    alert( "The week from cannot be greater than the week to on the same year." );
-                    document.frm.week_no.focus() ;
-                    return false;
-                }
-            }
-
+           
             var checked=false;
             var elements = document.getElementsByName("disease[]");
             for(var i=0; i < elements.length; i++){
